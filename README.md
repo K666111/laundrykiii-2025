@@ -1,4 +1,4 @@
-# 🧺 Laundry Management System – Laravel 12 + Filament
+# 🧺 Laundry Management System – SYAUQI RIFKI FADILAH
 
 Sistem manajemen laundry berbasis web menggunakan Laravel 12 dan Filament Admin. Meskipun hanya terdiri dari 3 tabel utama (`customers`, `services`, `transactions`), aplikasi ini tetap mengimplementasikan konsep algoritma dan struktur data seperti:
 
