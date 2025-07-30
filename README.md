@@ -101,6 +101,7 @@ Menjaga arsitektur kode bersih menggunakan pola MVC.**
 | Navigasi Layanan    | Hubungan antar layanan (graph)                      |
 | Pencarian Data      | Cari transaksi berdasarkan nama pelanggan/layanan   |
 
+
 5. Struktur Data yang Digunakan
 | Struktur | Penggunaan                                                                     |
 | -------- | ------------------------------------------------------------------------------ |
@@ -111,6 +112,7 @@ Menjaga arsitektur kode bersih menggunakan pola MVC.**
 | Graph    | Representasi relasi antar layanan (misal: rute layanan)                        |
 | Search   | Pencarian via SQL + Laravel searchable                                         |
 | MVC      | Laravel default: Model-View-Controller (Filament Resource = Controller + View) |
+
 
 B. KESIMPULAN
 Sistem ini sederhana dalam jumlah tabel namun kuat dalam logika struktur data. Dengan hanya customers, services, dan transactions, kamu tetap bisa membangun sistem laundry dengan fitur:
