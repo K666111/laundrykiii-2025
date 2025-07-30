@@ -77,50 +77,6 @@ Sistem manajemen laundry berbasis web menggunakan Laravel 12 dan Filament Admin.
 
 ---
 
-## ⚙️ Contoh Algoritma
-
-### 1. Hitung Total Transaksi
-```php
-$total = 0;
-foreach ($selectedServices as $serviceId) {
-    $service = Service::find($serviceId);
-    $total += $service->price * $quantity;
-}
-
-### 2. Stack Log (Push & Pop)
-// Push log
-$logs = $transaction->logs ?? [];
-$logs[] = "Setrika dimulai";
-$transaction->logs = $logs;
-$transaction->save();
-
-// Pop log
-$logs = $transaction->logs;
-array_pop($logs);
-$transaction->logs = $logs;
-$transaction->save();
-
-3. Queue: Ambil Transaksi Berikutnya
-Transaction::where('status', 'pending')
-    ->orderBy('queue_position')
-    ->first();
-
-4. Tree: Print Kategori Layanan
-function printTree($parentId = null, $level = 0) {
-    $nodes = Service::where('parent_id', $parentId)->get();
-    foreach ($nodes as $node) {
-        echo str_repeat('-', $level * 2) . $node->name . "\n";
-        printTree($node->id, $level + 1);
-    }
-}
-
-5. Search Transaksi
-Transaction::whereRelation('customer', 'name', 'like', '%cari%')
-    ->orWhereJsonContains('services', $serviceId)
-    ->get();
-
-
-
 ** A. ANALISIS STUDI KASUS LAUNDRY
 1. Judul
 "Sistem Informasi Manajemen Laundry Berbasis Web Menggunakan Laravel 12 dan Filament dengan Pendekatan Struktur Data Komputasional"
@@ -166,3 +122,46 @@ Relasi antar proses atau cabang (graph)
 Disiplin pola arsitektur (MVC)
 Dukungan pencarian cepat (search)
 
+--
+
+## ⚙️ Contoh Algoritma
+
+### 1. Hitung Total Transaksi
+```php
+$total = 0;
+foreach ($selectedServices as $serviceId) {
+    $service = Service::find($serviceId);
+    $total += $service->price * $quantity;
+}
+
+### 2. Stack Log (Push & Pop)
+// Push log
+$logs = $transaction->logs ?? [];
+$logs[] = "Setrika dimulai";
+$transaction->logs = $logs;
+$transaction->save();
+
+// Pop log
+$logs = $transaction->logs;
+array_pop($logs);
+$transaction->logs = $logs;
+$transaction->save();
+
+3. Queue: Ambil Transaksi Berikutnya
+Transaction::where('status', 'pending')
+    ->orderBy('queue_position')
+    ->first();
+
+4. Tree: Print Kategori Layanan
+function printTree($parentId = null, $level = 0) {
+    $nodes = Service::where('parent_id', $parentId)->get();
+    foreach ($nodes as $node) {
+        echo str_repeat('-', $level * 2) . $node->name . "\n";
+        printTree($node->id, $level + 1);
+    }
+}
+
+5. Search Transaksi
+Transaction::whereRelation('customer', 'name', 'like', '%cari%')
+    ->orWhereJsonContains('services', $serviceId)
+    ->get();
